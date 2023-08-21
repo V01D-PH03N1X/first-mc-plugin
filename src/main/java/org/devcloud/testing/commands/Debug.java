@@ -1,5 +1,7 @@
 package org.devcloud.testing.commands;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.title.Title;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -28,7 +30,7 @@ public class Debug extends Command {
             {
                 player.setHealth(10);
                 player.setFoodLevel(10);
-                player.sendMessage("You have been damaged and hungered!");
+                player.showTitle(Title.title(Component.text("§4§lDebugged"), Component.text("You have been damaged and hungered!")));
             } else if (args.length == 1)
             {
                 Player target = player.getServer().getPlayer(args[0]);
