@@ -1,0 +1,10 @@
+# Testing MC Plugin
+# ------------------
+
+I have created a simple plugin for MC that will allow you to test the
+functionality of the MC plugin system.  It is called "testplugin".
+
+# Commands
+Feed - This command will feed the player.
+Heal - This command will heal the player.
+Debug - This command will remove 10 health and 10 food from the player.
