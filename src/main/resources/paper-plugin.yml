@@ -1,0 +1,35 @@
+name: testing
+version: '${project.version}'
+main: org.devcloud.testing.Testing
+api-version: '1.20'
+
+permissions :
+  testing.heal:
+    description: "General Heal Permission"
+    default: op
+  testing.feed:
+    description: "General Feed Permission"
+    default: op
+  testing.debug:
+    description: "General Debug Permission"
+    default: op
+
+commands:
+  heal:
+    description: "Heal Command"
+    usage: "/heal <player>"
+    aliases: [heal, h]
+    permission: testing.heal
+    permission-message: "Du hast keine Berechtigung diesen Befehl auszuführen!"
+  feed:
+    description: "Feed Command"
+    usage: "/feed <player>"
+    aliases: [feed, f]
+    permission: testing.feed
+    permission-message: "Du hast keine Berechtigung diesen Befehl auszuführen!"
+  debug:
+    description: "Debug Command"
+    usage: "/debug <player>"
+    aliases: [debug, d]
+    permission: testing.debug
+    permission-message: "Du hast keine Berechtigung diesen Befehl auszuführen!"
