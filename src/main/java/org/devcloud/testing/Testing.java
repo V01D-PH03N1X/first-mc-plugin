@@ -1,11 +1,14 @@
 package org.devcloud.testing;
 
+import org.bukkit.Server;
 import org.bukkit.command.CommandMap;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.devcloud.testing.commands.Debug;
 import org.devcloud.testing.commands.Feed;
 import org.devcloud.testing.commands.Heal;
+import org.devcloud.testing.utils.webserver.WebServer;
 
+import java.io.IOException;
 import java.util.logging.Logger;
 
 /**
@@ -17,6 +20,14 @@ public final class Testing extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        WebServer webServer = new WebServer();
+        Server server = getServer();
+        try {
+            webServer.startServer(server);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         // Plugin startup logic
         logger.info("Hello Bananas! This is a test plugin!");
         CommandMap commandMap = getServer().getCommandMap();

@@ -21,9 +21,8 @@ public class Feed extends Command {
             commandSender.sendMessage("You do not have permission to use this command!");
             return false;
         }
-        if (commandSender instanceof Player)
+        if (commandSender instanceof Player player)
         {
-            Player player = (Player) commandSender;
             if (args.length == 0)
             {
                 player.setFoodLevel(20);
